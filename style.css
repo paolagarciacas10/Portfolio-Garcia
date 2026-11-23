@@ -1,0 +1,543 @@
+@charset "utf-8";
+.Footer {
+}
+/*lo de abajo es para que las imagenes no se salgan mas del container*/
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*lo de abajo es para que las imagenes salgan como columnas*/
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.project-grid > article {
+  box-sizing: border-box;
+  flex: 0 0 calc((100% - 20px) / 2);
+  min-width: 0;
+}
+
+@media (max-width: 600px) {
+  .project-grid > article {
+    flex-basis: 100%;
+  }
+}
+
+/* Mostrar dos tarjetas del mismo ancho en pantallas de escritorio */
+@media (min-width: 901px) {
+  .project-grid > article {
+    flex-basis: calc(50% - 10px);
+  }
+}
+
+/* Dar el mismo tamaño a los espacios de las imágenes */
+.project-grid > article > img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background-color: #FFFCF7;
+}
+
+/* Dar fondo, borde y espacio interior a cada tarjeta */
+.project-grid > article {
+  background-color: #FFFCF7;
+  border: 1px solid #D9C9B5;
+  padding: 16px;
+}
+
+
+
+/* Separar el título de la imagen y la descripción */
+.project-grid > article > h2 {
+    margin: 16px 0 6px;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 30px;
+}
+
+/* Quitar el espacio extra debajo de la descripción */
+.project-grid > article > p {
+    margin-top: 9px;
+    margin-right: 9px;
+    margin-left: 9px;
+    margin-bottom: -1px;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Centrar el menú y darle espacio arriba y abajo */
+nav[aria-label="Main navigation"] {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  padding: 12px 16px;
+  background-color: #F2E5D2;
+  border-bottom: 1px solid #D9C9B5;
+}
+
+/* Dar a cada enlace una zona cómoda para pulsar */
+nav[aria-label="Main navigation"] a {
+  padding: 10px 16px;
+  border-radius: 999px;
+  color: #392B26;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Resaltar el enlace al pasar el cursor */
+nav[aria-label="Main navigation"] a:hover {
+  background-color: #E8D7BF;
+}
+
+/* Marcar la página actual */
+nav[aria-label="Main navigation"] a[aria-current="page"] {
+  background-color: #392B26;
+  color: #FFF6E6;
+}
+
+/* Mostrar el foco al navegar con el teclado */
+nav[aria-label="Main navigation"] a:focus-visible {
+  outline: 2px solid #392B26;
+  outline-offset: 3px;
+}
+
+/* Limitar el tamaño del logotipo */
+.project-logo {
+  width: 220px;
+  margin-bottom: 16px;
+}
+
+/* Dar espacio a las imágenes y sus pies de foto */
+.project-figure {
+    max-width: 680px;
+    margin: 24px 0;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif
+}
+
+.project-figure figcaption {
+    margin-top: 8px;
+    font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+	
+}
+
+/* Dar al enlace la apariencia de un botón */
+.project-button {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #A94F32;
+    color: #FFF6E6;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 999px;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.project-button:hover,
+.project-button:focus-visible {
+  text-decoration: underline;
+}
+/* Colocar las tres capturas en una fila */
+.project-gallery {
+  display: flex;
+  gap: 16px;
+  margin: 30px 0;
+}
+
+.project-gallery > figure {
+    flex: 1 1 0;
+    min-width: 0;
+    margin: 0;
+    border-width: 0px;
+	border-radius: 16px
+}
+
+/* Dar el mismo tamaño a las capturas sin recortarlas */
+/* Usar marcos horizontales para las capturas */
+.project-gallery img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 1;
+  object-fit: contain;
+  
+  border-radius: 16px;
+}
+.pocajontas{
+	border-radius: 30px
+}
+/* Centrar los pies de foto debajo de las capturas */
+.project-gallery figcaption {
+    margin-top: 14px;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #392B26;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-bottom: 30px;
+}
+/* Colocar una captura por fila en pantallas pequeñas */
+@media (max-width: 600px) {
+  .project-gallery {
+    flex-direction: column;
+  }
+}
+/* Aplicar un fondo crema a todas las páginas del portafolio */
+body {
+  background-color: #FFFBF3;
+}
+/* Centrar el contenido y dejar espacio a los lados */
+.case-study {
+  max-width: none;
+  margin: 0 auto;
+  padding: 40px 20px 64px;
+}
+
+/* Dar un fondo suave a la introducción */
+.case-study-intro {
+  padding: clamp(20px, 5vw, 48px);
+  background-color: #FFFCF7;
+  border: 1px solid #D9C9B5;
+  border-radius: 20px;
+}
+
+.case-study-intro h1 {
+  margin: 0 0 20px;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+}
+
+.pocajontas{
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif" normal;
+    font-weight: 100;
+}
+/* Usar el mismo estilo para los títulos y párrafos */
+.case-study h2 {
+    margin: 0 0 12px;
+    color: #FFFCF7;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 30px;
+    display: block;
+    padding: 12px 20px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 958px;
+    background-color: #B59766;
+}
+.project-pocajontas {
+	border-radius: 16px
+}
+
+.case-study p {
+    max-width: none;
+    margin: 0 0 16px;
+    line-height: 1.65;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+}
+
+/* Separar las secciones con espacio y una línea fina */
+.case-study > section {
+  padding: 28px 0;
+  border-bottom: 1px solid #D9C9B5;
+}
+
+/* Redondear los bordes de las imágenes del proyecto */
+.case-study figure img {
+  border-radius: 12px;
+}
+/* Centrar el boceto y su pie de foto */
+.project-sketch {
+  max-width: 360px;
+  margin: 24px auto;
+  text-align: center;
+}
+
+.project-sketch img {
+  margin-inline: auto;
+}
+/* Crear una barra de navegación delgada y centrada */
+nav[aria-label="Main navigation"] {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0 12px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 4px 12px;
+  background-color: #392B26;
+  border: 0;
+}
+
+/* Estilizar los enlaces del menú */
+nav[aria-label="Main navigation"] a {
+    padding: 10px 8px;
+    color: #FFF6E6;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-decoration: none;
+    border-radius: 0;
+}
+
+/* Subrayar el enlace activo o seleccionado */
+nav[aria-label="Main navigation"] a:hover,
+nav[aria-label="Main navigation"] a:focus-visible,
+nav[aria-label="Main navigation"] a[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+/* Mostrar el foco al navegar con el teclado */
+nav[aria-label="Main navigation"] a:focus-visible {
+  outline: 2px solid #FFF6E6;
+  outline-offset: -2px;
+}
+/* Centrar el contenido de la página de contacto */
+.contact-page {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: clamp(48px, 10vw, 112px) 20px;
+  text-align: center;
+  color: #392B26;
+}
+
+.contact-page h1 {
+    margin: 0 0 16px;
+    font-size: clamp(2.25rem, 6vw, 4rem);
+    line-height: 1.1;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.contact-page p {
+    margin: 0 auto 24px;
+    line-height: 1.65;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/* Quitar el margen exterior de la página */
+body {
+  margin: 0;
+  background-color: #FFF6E6;
+}
+/* Quitar el borde del botón de copiar correo */
+#copy-email {
+  border: none;
+}
+/* Centrar la presentación y darle espacio */
+.home-intro {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: clamp(48px, 10vw, 112px) 20px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #392B26;
+}
+
+/* Ajustar el tamaño del título según la pantalla */
+.home-intro h1 {
+  margin: 0 0 16px;
+  font-size: clamp(2.25rem, 6vw, 4rem);
+  line-height: 1.1;
+}
+
+/* Separar la descripción del botón */
+.home-intro p {
+    max-width: 52ch;
+    margin-top: 41px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 24px;
+    line-height: 1.65;
+}
+
+/* Usar la misma tipografía en el botón y quitar el borde */
+.home-intro .project-button {
+  font-family: inherit;
+  border: none;
+}
+
+/* Centrar el aviso de derechos de autor */
+.home-footer {
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #392B26;
+}
+/* Mantener el pie de página al fondo de la pantalla */
+.home-page {
+  min-height: 100vh;
+  
+  display: flex;
+  flex-direction: column;
+}
+
+.home-page > .home-footer {
+  margin-top: auto;
+}
+/* Unificar la tipografía y el color de la página de proyectos */
+.work-page main {
+  padding: 0 20px 48px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #392B26;
+}
+
+/* Centrar el título y la introducción */
+.work-intro {
+  padding: 48px 0 32px;
+  text-align: center;
+}
+
+.work-intro h1 {
+    margin: 0 0 12px;
+    font-size: clamp(2.25rem, 6vw, 4rem);
+    line-height: 1.1;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+}
+
+.work-intro p {
+    margin: 0 auto;
+    max-width: 52ch;
+    line-height: 1.65;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Suavizar las esquinas de las tarjetas y sus imágenes */
+.work-page .project-grid > article {
+  border-radius: 16px;
+}
+
+.work-page .project-grid > article > img {
+  border-radius: 10px;
+}
+
+/* Separar el botón de la descripción */
+.work-page .project-button {
+  margin-top: 16px;
+  font-family: inherit;
+}
+/* Dar a las tarjetas el mismo fondo, borde y espacio interior */
+.work-page .project-grid > article {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background-color: #FFFCF7;
+  border: 1px solid #D9C9B5;
+  border-radius: 16px;
+}
+
+/* Usar un fondo suave detrás de cada imagen */
+.work-page .project-grid > article > img {
+  background-color: #F2E5D2;
+  border-radius: 10px;
+}
+
+/* Unificar el espacio y el tamaño de los títulos */
+.work-page .project-grid > article > h2 {
+  margin: 16px 0 8px;
+  font-size: 1.5rem;
+}
+
+/* Dejar espacio entre la descripción y el botón */
+.work-page .project-grid > article > p {
+  margin: 0 0 20px;
+  line-height: 1.55;
+}
+
+/* Alinear los botones al fondo de las tarjetas */
+.work-page .project-grid > article > .project-button {
+  align-self: flex-start;
+  margin-top: auto;
+}
+.project-gallery2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 220px));
+  justify-content: center;
+  gap: 16px;
+}
+
+.project-gallery2 figure {
+  margin: 0;
+  text-align: center;
+}
+
+.project-gallery2 img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.aboutpage h2 {
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 9px;
+    margin-bottom: 12px;
+    color: #FFFCF7;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 30px;
+    display: block;
+    padding-top: 11px;
+    padding-right: 20px;
+    padding-left: 36px;
+    padding-bottom: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 958px;
+    background-color: #392B26;
+}
+.aboutpage p {
+    max-width: none;
+    margin-top: 17px;
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: 20px;
+    line-height: 1.65;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    padding-left: 21px;
+    padding-top: 10px;
+    padding-right: 14px;
+}
+.aboutpage ul {
+    max-width: none;
+    margin-top: 5px;
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: 30px;
+    line-height: 1.65;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px
+}
+.aboutpage h1 {
+    margin-top: 90px;
+    margin-right: 0;
+    margin-left: 9px;
+    margin-bottom: 16px;
+    color: #FFFCF7;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 30px;
+    display: block;
+    padding-top: 8px;
+    padding-right: 20px;
+    padding-left: 36px;
+    padding-bottom: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 958px;
+    background-color: #392B26;
+}
+.name img {
+    display: block;
+    max-width: 70%;
+    height: auto;
+    margin-left: 171px;
+    margin-top: 22px;
+    padding-left: 31px;
+}

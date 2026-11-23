@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+	
+<title>Cerca</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	
+	<!-- Navegación principal del portafolio -->
+<nav aria-label="Main navigation">
+  <a href="Work.html" >Work</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+	 <a href="index.html#home">Home</a>
+</nav>
+		
+		
+		
+		
+    
+<!-- Presentar la información de contacto -->
+<main class="contact-page">
+  <h1>Let’s get in touch.</h1>
+  <p>
+    Have a design project in mind or want to talk about my work?
+    I’d love to hear from you.
+  </p>
+
+<!-- Mostrar la dirección y permitir que se copie -->
+<p><span id="contact-email">paolagarcia20050610@gmail.com</span></p>
+<button class="project-button" type="button" id="copy-email">
+  Copy email address
+</button>
+
+
+</main>
+	<script>
+  // Copiar la dirección y mostrar el resultado
+  const copyButton = document.querySelector("#copy-email");
+  const email = document.querySelector("#contact-email");
+  const status = document.querySelector("#copy-status");
+
+  copyButton.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(email.textContent.trim());
+      status.textContent = "Email address copied!";
+    } catch {
+      status.textContent = "Select and copy the email address above.";
+    }
+  });
+</script>
+	<footer class="home-footer">   <p>© 2026 Paola Garcia</p> </footer>
+</body>
+</html>
